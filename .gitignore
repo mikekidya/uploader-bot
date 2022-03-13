@@ -2,3 +2,8 @@
 /messages-bot/.gradle
 /messages-bot/gradle/wrapper/gradle-wrapper.jar
 /messages-bot/build
+
+/settings-bot/.idea
+/settings-bot/.gradle
+/settings-bot/gradle/wrapper/gradle-wrapper.jar
+/settings-bot/build
