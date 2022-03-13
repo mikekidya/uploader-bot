@@ -12,7 +12,9 @@ repositories {
     mavenCentral()
 }
 
-
+dependencies {
+    implementation("com.github.pengrad:java-telegram-bot-api:5.7.0")
+}
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
