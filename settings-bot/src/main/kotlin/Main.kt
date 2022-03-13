@@ -1,7 +1,17 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import com.pengrad.telegrambot.TelegramBot
+import com.pengrad.telegrambot.UpdatesListener
+import com.pengrad.telegrambot.request.SendMessage
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+
+fun main(args: Array<String>) {
+    val tgBot = TelegramBot(System.getenv("BOT_TOKEN"))
+
+    tgBot.setUpdatesListener { updates ->
+        updates.forEach {
+            val chatId = it.message().chat().id()
+            val responseMessage = SendMessage(chatId, "Hello!")
+            tgBot.execute(responseMessage)
+        }
+        UpdatesListener.CONFIRMED_UPDATES_ALL
+    }
 }
